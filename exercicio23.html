@@ -25,6 +25,7 @@
         var mes =  Number(ipt_mes.value) 
         var total = Number(guarde) + Number(poupado) * Number(mes)
         var contador = 0 
+        var pombinha = guarde
         mensagem.innerHTML = ` `
         if (Number.isNaN(guarde)) {
             
@@ -41,7 +42,9 @@
         else{
         while (contador < mes) {
                 contador ++;
-                mensagem.innerHTML += `Marco tinha ${guarde}R$, depois do depósito do ${mes} mes ele ficou com ${total}`
+                total = Number(guarde) + Number(contador) * Number(poupado)
+                mensagem.innerHTML += `<br>Marco tinha ${pombinha}R$, depois do depósito do ${contador} mes ele ficou com ${total}`
+                pombinha = total
             }
             
          }
