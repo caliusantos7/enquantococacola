@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cofrinho</h1>
+    Receba o valor que ele já tem  guardado <input id="ipt_guardar" type="text">
+    Receba o valor que será poupado a cada mês <input id="ipt_poupado" type="text">
+    Receba a quantidade de meses <input id="ipt_mes" type="text">
+
+    <button onclick="poupar()">Vamos poupar</button>
+    <span id="mensagem"></span>
+</body>
+</html>
+
+<script>
+    
+    function poupar() {
+        var guarde = Number(ipt_guardar.value)
+        var poupado = Number(ipt_poupado.value)
+        var mes =  Number(ipt_mes.value) 
+        var total = Number(guarde) + Number(poupado) * Number(mes)
+        var contador = 0 
+        mensagem.innerHTML = ` `
+        if (Number.isNaN(guarde)) {
+            
+            mensagem.innerHTML += `Guardado pode ser qualquer valor`
+        }
+        else if (poupado < 1 ) {
+            
+            mensagem.innerHTML += `Poupado tem que ser maior que 0 `
+        }
+        else if (mes <6 || mes > 20) {
+            
+            mensagem.innerHTML += `mes`
+        }
+        else{
+        while (contador < mes) {
+                contador ++;
+                mensagem.innerHTML += `Marco tinha ${guarde}R$, depois do depósito do ${mes} mes ele ficou com ${total}`
+            }
+            
+         }
+
+
+        // while (contador > 0) {
+            
+        
+        // if (Number.isNaN(guarde)) {
+        //     mensagem.innerHTML += `Guardado pode ser qualquer valor `
+        // } else if (poupado < 0) {
+        //     mensagem.innerHTML += `Poupado tem que ser maior que 0`
+        // } 
+        // else if (mes >= 6 && mes <= 20 ) {
+        //     mensagem.innerHTML += `mes`  
+        // } else {
+        //     mensagem.innerHTML = `“Marco tinha ${guarde}R$, depois do depósito do ${mes} mes ele ficou com   ${total}`
+        // }
+
+// “Marco tinha 999,99, depois do depósito do Xº mês ele ficou com ZZZ,ZZ” , onde:
+// 999,99 – na primeira mensagem é o valor de a) nas demais mensagens será com quanto ele ficou
+// da mensagem anterior.
+// X – é o número do mês que ele está poupando
+// ZZZ,ZZ – é o resultado do quanto ele tinha somado com o poupado do mês.
+        }
+
+</script>
