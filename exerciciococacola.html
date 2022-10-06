@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas cocas você bebeu na vida<input  id="ipt_qut" type="text">
+
+    <button onclick="Tomar()">Coca</button>
+    <span id="mensagem"></span>
+</body>
+</html>
+
+<script>
+
+    function Tomar() {
+        var contador = 0
+        var quantidade = Number(ipt_qut.value)
+
+        while (contador < quantidade) {
+            mensagem.innerHTML += `<img src="https://drogariamoderna.vtexassets.com/arquivos/ids/230365-800-auto?v=637590418924500000&width=800&height=auto&aspect=true" style="width:20px;" > Quantas cocas vc tomou na vida ${contador}`
+            contador++;
+        }
+    }
+</script>
